@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-semibold text-gray-800 mb-2">Personal AI Assistant</h1>
+            <p class="text-gray-600">Your intelligent companion that learns and grows with you</p>
+        </header>
+
+        <!-- Main Chat Interface -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <!-- Chat Messages -->
+            <div id="chat-messages" class="space-y-4 mb-6 h-[400px] overflow-y-auto">
+                <!-- Messages will be inserted here -->
+            </div>
+
+            <!-- Input Form -->
+            <form id="chat-form" class="flex gap-4">
+                <input 
+                    type="text" 
+                    id="user-input" 
+                    class="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Type your message here..."
+                >
+                <button 
+                    type="submit"
+                    class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+                >
+                    <i class="fas fa-paper-plane mr-2"></i>Send
+                </button>
+            </form>
+        </div>
+
+        <!-- History Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Interaction History</h2>
+            <div id="history-list" class="space-y-4">
+                <!-- History items will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Template -->
+    <template id="message-template">
+        <div class="message flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+                <i class="fas fa-user text-gray-500"></i>
+            </div>
+            <div class="flex-1">
+                <div class="font-medium text-gray-800"></div>
+                <div class="mt-1 text-gray-600"></div>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
